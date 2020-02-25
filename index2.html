@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+    <style>
+        .class1{
+            background-color: black;
+            color: aliceblue;
+        } 
+    </style>
+</head>
+<body>
+    <div class="app">
+        <input type="checkbox" name="" v-model="click" id="">
+        <div v-bind:class="{'class1':click}">
+            指令
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el:".app",
+            data:{
+                click:false
+            }
+        })
+    </script>
+</body>
+</html>

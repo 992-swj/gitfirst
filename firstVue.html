@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="lists in list">
+                {{lists.name}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    list:null
+                }
+            },
+            mounted() {
+               axios.get('vue.json').
+               then(response=>(this.list=response.data.WeiJie))
+            }
+        })
+    </script>
+
+</body>
+</html>

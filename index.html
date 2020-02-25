@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+    <div id="content">{{message}}
+        {{url}}
+        <div class="show">{{show()}}</div>
+        <div class="html" v-html="html"></div>
+    </div>
+    
+</body>
+<script>
+    /*
+        Vue标准语法
+    */
+    new Vue({
+        el:"#content",
+        data: {
+            message:'<h1>Hello Vue.js</h1>',
+            url:"www.VueJs.com",
+            html:"<h1>这里给页面绑定了一个html代码</h1>"
+        },
+        methods: {
+            show:function(){
+                return "这是一个方法";
+            }
+        }
+    })
+
+
+</script>
+</html>

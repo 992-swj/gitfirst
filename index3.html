@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表达式</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        {{ok ? 'ok':'no'}}
+        <div v-bind:id="'Bin'+id">绑定id</div>
+
+        <div v-if="show">是否显示呐</div>
+        <div class="a" v-if="show">
+            <a v-bind:href="url">伟杰百科</a>
+            <a v-on:click="doSomething">你好</a>
+
+                <ul>
+                    <li v-for="list in arr">
+                        {{list}}
+                    </li>
+                </ul>
+
+                <ul>
+                    <li v-for="(value,key) in lists">
+                        {{key}}:{{value}}
+                    </li>
+                </ul>
+
+                <ul>
+                    <li v-for="shu in 15">
+                        {{shu}}
+                    </li>
+                </ul>
+
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el:".app",
+            data:{
+                ok:false,
+                id:5,
+                show:true,
+                url:"http://39.96.40.216/",
+               arr:[
+                   {name:'张三'},
+                   {age:15},
+                    {address:'江苏新沂'}
+               ],
+               lists:{
+                   name:"李四",
+                   age:"15"
+               }
+            },
+            methods: {
+                doSomething:function(){
+                    alert('年后');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
